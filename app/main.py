@@ -7,6 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 # # when using alembic, this can be commented out
 # models.Base.metadata.create_all(bind=engine_)
 
+
 app = FastAPI()
 # origins = ['https://www.google.com', 'https://www.youtube.com'] # allow access for specific domains
 origins = ["*"]  # allow access for all public domains
