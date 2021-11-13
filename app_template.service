@@ -1,0 +1,16 @@
+[Unit]
+Description=app service template
+After=network.target # makes sure the service starts after the network is setup
+
+[Service]
+User=username
+Group=Groupname # can be same as username
+WorkingDirectory=/home/sanjeev/app/src/
+Environment="PATH=/home/username/appdir/venv/bin"
+EnvironmentFile=/home/username/.env
+ExecStart=/home/username/app/venv/bin/gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:8000
+
+# to enable the service to run on boot-up, use 'systemctl enable app.service' command
+
+[Install]
+WantedBy=multi-user.target
