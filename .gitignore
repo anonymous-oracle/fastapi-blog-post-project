@@ -220,3 +220,5 @@ workspace.code-workspace
 *.yaml
 *.ckpt
 *__pycache__*
+.dbenv
+.*env*
