@@ -43,3 +43,4 @@ virtualenv-clone
 Werkzeug
 websockets
 oauthlib
+pytest
