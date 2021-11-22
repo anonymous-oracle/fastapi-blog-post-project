@@ -1,4 +1,5 @@
 alembic
+aiohttp[speedups]
 appdirs
 asgiref
 black
