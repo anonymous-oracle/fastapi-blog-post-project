@@ -31,6 +31,6 @@ async def get_user(id: int, db: Session = Depends(get_db)):
     return user.first()
 
 @router.get("/", response_model=schemas.UserResponse)
-async def get_user(id: int, db: Session = Depends(get_db)):
+async def get_user(db: Session = Depends(get_db)):
     
     return db.query(models.User).all()
