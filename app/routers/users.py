@@ -29,3 +29,8 @@ async def get_user(id: int, db: Session = Depends(get_db)):
             detail=f"user with id {id} does not exist",
         )
     return user.first()
+
+@router.get("/", response_model=schemas.UserResponse)
+async def get_user(id: int, db: Session = Depends(get_db)):
+    
+    return db.query(models.User).all()
