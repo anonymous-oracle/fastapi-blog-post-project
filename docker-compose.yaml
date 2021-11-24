@@ -2,7 +2,7 @@ version: '3.8'
 services:
   # a container for each service, app, etc
   api:
-    build: 25805503/fastapi_blog_project:1.1
+    image: 25805503/fastapi_blog_project:1.1
     depends_on:
       - postgres
     ports:
