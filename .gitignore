@@ -217,7 +217,7 @@ verification_audios/*
 enrollment_audios/*
 workspace.code-workspace
 *.wav
-*.yaml
+
 *.ckpt
 *__pycache__*
 .dbenv
