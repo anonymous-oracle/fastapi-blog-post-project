@@ -2,7 +2,7 @@ from fastapi import testclient
 from fastapi.testclient import TestClient
 from app.main import app
 
-client = TestClient(app)
+client = TestClient(app, base_url="http://localhost:8000")
 
 
 def test_root():
@@ -14,6 +14,12 @@ def test_root():
 
 def test_create_user():
     res = client.post(
-        "/users", json={"email": "user2@app.com", "password": "admin123"}
+        "/users",
+        json={"email": "user2@app.com", "password": "admin123"},
     )
-    # print(res.json())
+    print(res.text)
+
+
+def test_get_users():
+    res = client.get("/users")
+    # print(res.text)
